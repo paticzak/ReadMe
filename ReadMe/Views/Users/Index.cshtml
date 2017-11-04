@@ -1,0 +1,19 @@
+﻿@model ReadMe.Models.User
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table class="table">
+    @foreach (var user in Model.Users)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(user.Name, "Details", "Users", new { id = user.Id }, null)
+                
+            </td>
+        </tr>
+    }
+</table>
+
+
+
