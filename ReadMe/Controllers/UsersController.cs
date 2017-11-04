@@ -13,28 +13,41 @@ namespace ReadMe.Controllers
         // GET: /Users/
         public ActionResult Index()
         {
-            var users =  new List<User> 
-            {
-                new User { Name = "Dzik", Id = 1},
-                new User { Name = "Pingwin", Id = 2},
-            };
+            //var users =  new List<User> 
+            //{
+            //    new User { Name = "Dzik", Id = 1},
+            //    new User { Name = "Pingwin", Id = 2},
+            //};
 
-            var viewusers = new User
-            {
-                Users = users
-            };
+            //var viewusers = new User
+            //{
+            //    Users = users
+            //};
 
-            return View(viewusers);
+            var users = GetUsers();
+
+            return View(users);
 
         }
 
         // GET: /Users/Details/id
-        [Route("Users/Details/{id}")]
         public ActionResult Details(int id)
-        {
-           
-           return View();
-
+        {         
+              var user = GetUsers().SingleOrDefault(c => c.Id == id);
+ 
+             if (user == null)
+                 return HttpNotFound();
+ 
+             return View(user);
+         
         }
+         private IEnumerable<User> GetUsers()
+        {
+             return new List<User>
+             {
+                 new User { Id = 1, Name = "Dzik" },
+                 new User { Id = 2, Name = "Pingwin" }
+             };
+         }
     }
 }

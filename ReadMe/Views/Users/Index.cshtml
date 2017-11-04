@@ -1,10 +1,10 @@
-﻿@model ReadMe.Models.User
+﻿@model IEnumerable<ReadMe.Models.User>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <table class="table">
-    @foreach (var user in Model.Users)
+    @foreach (var user in Model)
     {
         <tr>
             <td>
