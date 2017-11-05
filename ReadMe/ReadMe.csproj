@@ -185,6 +185,18 @@
     <Compile Include="Migrations\201711051135021_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201711051135021_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711051232280_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\201711051232280_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201711051232280_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711051236128_SetNameOfMembershipType.cs" />
+    <Compile Include="Migrations\201711051236128_SetNameOfMembershipType.Designer.cs">
+      <DependentUpon>201711051236128_SetNameOfMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711051319555_AddDateOfBirthToCustomer.cs" />
+    <Compile Include="Migrations\201711051319555_AddDateOfBirthToCustomer.Designer.cs">
+      <DependentUpon>201711051319555_AddDateOfBirthToCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -273,6 +285,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711051135021_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>201711051135021_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711051232280_AddNameToMembershipType.resx">
+      <DependentUpon>201711051232280_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711051236128_SetNameOfMembershipType.resx">
+      <DependentUpon>201711051236128_SetNameOfMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711051319555_AddDateOfBirthToCustomer.resx">
+      <DependentUpon>201711051319555_AddDateOfBirthToCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
