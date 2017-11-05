@@ -12,23 +12,23 @@ namespace ReadMe.Controllers
     {
         
         //GET: /Books/Random
-        public ActionResult Random()
-        {
-            var book = new Book() { Name = "Gra o tron" };
-            var users = new List<Customer>
-            {
-                new Customer { Name = "User1" },
-                new Customer { Name = "User2" },
-            };
+        //public ActionResult Random()
+        //{
+        //    var book = new Book() { Name = "Gra o tron" };
+        //    var customers = new List<Customer>
+        //    {
+        //        new Customer { Name = "User1" },
+        //        new Customer { Name = "User2" },
+        //    };
 
-            var viewModel = new RandomBookViewModel
-            {
-                Book = book,
-                Users = users
-            };
+        //    var viewModel = new RandomBookViewModel
+        //    {
+        //        Book = book,
+        //        Users = users
+        //    };
 
-            return View(viewModel);
-        }
+        //    return View(viewModel);
+        //}
 
         public ActionResult Index()
         {
