@@ -9,6 +9,6 @@ namespace ReadMe.ViewModels
     public class RandomBookViewModel
     {
         public Book Book { get; set; }
-        public List<User> Users { get; set; }
+        public List<Customer> Users { get; set; }
     }
 }

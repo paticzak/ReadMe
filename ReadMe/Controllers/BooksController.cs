@@ -15,10 +15,10 @@ namespace ReadMe.Controllers
         public ActionResult Random()
         {
             var book = new Book() { Name = "Gra o tron" };
-            var users = new List<User>
+            var users = new List<Customer>
             {
-                new User { Name = "User1" },
-                new User { Name = "User2" },
+                new Customer { Name = "User1" },
+                new Customer { Name = "User2" },
             };
 
             var viewModel = new RandomBookViewModel
