@@ -1,11 +1,11 @@
-﻿@model ReadMe.Models.Book
+﻿@model IEnumerable<ReadMe.Models.Book>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (Model.Books.Count == 0)
+@if (!Model.Any())
 {
     <p>You hasn't read a book yet.</p>
 }
@@ -14,7 +14,7 @@ else
     <h2>Książki przeczytane:</h2>
 
     <table class="table table-bordered table-hover">
-        @foreach (var book in Model.Books)
+        @foreach (var book in Model)
         {
             <tr>
                 <td>@book.Name</td>

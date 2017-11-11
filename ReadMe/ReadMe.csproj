@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201711051319555_AddDateOfBirthToCustomer.Designer.cs">
       <DependentUpon>201711051319555_AddDateOfBirthToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711051837588_AddBook.cs" />
+    <Compile Include="Migrations\201711051837588_AddBook.Designer.cs">
+      <DependentUpon>201711051837588_AddBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -294,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711051319555_AddDateOfBirthToCustomer.resx">
       <DependentUpon>201711051319555_AddDateOfBirthToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711051837588_AddBook.resx">
+      <DependentUpon>201711051837588_AddBook.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
