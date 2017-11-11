@@ -31,6 +31,17 @@ namespace ReadMe.Controllers
             return View(books);
         }
 
+        public ActionResult Details(int id)
+        {
+            var book = _context.Books.SingleOrDefault(b => b.Id == id);
+
+            if (book == null)
+                return HttpNotFound();
+
+            return View(book);
+
+        }
+
     }
 
 
