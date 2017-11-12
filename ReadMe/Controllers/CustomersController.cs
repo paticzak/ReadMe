@@ -26,10 +26,10 @@ namespace ReadMe.Controllers
             _context.Dispose();
         }
 
-        public ActionResult New()
+        public ActionResult CustomerForm()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
-            var viewModel = new NewCustomerViewModel
+            var viewModel = new CustomerFormViewModel
             {
                 MembershipTypes = membershipTypes
             };
@@ -44,21 +44,21 @@ namespace ReadMe.Controllers
 
             return RedirectToAction("Index", "Customers");
         }
-         
-        //public ActionResult Edit(int id)
-        //{
-        //    var customer = _context.Customers.SingleOrDefault(c => c.Id == id); // get the customers with id from the database
 
-        //    if (customer == null)
-        //        return HttpNotFound();
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id); // get the customers with id from the database
 
-        //    var viewModel = new NewCustomerViewModel
-        //    {
-        //        Customer = customer,
-        //        MembershipTypes = _context.MembershipTypes.ToList()
-        //    };
-        //    return View("CustomerForm", viewModel);
-        //}
+            if (customer == null)
+                return HttpNotFound();
+
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+            return View("CustomerForm", viewModel);
+        }
 
         // GET: /Users/
         public ActionResult Index()
