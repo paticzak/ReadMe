@@ -33,7 +33,7 @@ namespace ReadMe.Controllers
 
         public ActionResult Details(int id)
         {
-            var book = _context.Books.SingleOrDefault(b => b.Id == id);
+            var book = _context.Books.Include(b => b.Genre).SingleOrDefault(b => b.Id == id);
 
             if (book == null)
                 return HttpNotFound();
