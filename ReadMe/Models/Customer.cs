@@ -24,7 +24,7 @@ namespace ReadMe.Models
         public MembershipType MembershipType { get; set; } // navigation property / allows us to navigate from one type to another
 
         [Display(Name = "Membership Type")]
-        public byte MemberShipTypeId { get; set; } // it will treat it as foreign key
+        public byte MembershipTypeId { get; set; } // it will treat it as foreign key
 
     }
 }

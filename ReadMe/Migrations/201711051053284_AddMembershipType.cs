@@ -18,16 +18,16 @@ namespace ReadMe.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            AddColumn("dbo.Customers", "MemberShipTypeId", c => c.Byte(nullable: false));
-            CreateIndex("dbo.Customers", "MemberShipTypeId");
-            AddForeignKey("dbo.Customers", "MemberShipTypeId", "dbo.MembershipTypes", "Id", cascadeDelete: true);
+            AddColumn("dbo.Customers", "MembershipTypeId", c => c.Byte(nullable: false));
+            CreateIndex("dbo.Customers", "MembershipTypeId");
+            AddForeignKey("dbo.Customers", "MembershipTypeId", "dbo.MembershipTypes", "Id", cascadeDelete: true);
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Customers", "MemberShipTypeId", "dbo.MembershipTypes");
-            DropIndex("dbo.Customers", new[] { "MemberShipTypeId" });
-            DropColumn("dbo.Customers", "MemberShipTypeId");
+            DropForeignKey("dbo.Customers", "MembershipTypeId", "dbo.MembershipTypes");
+            DropIndex("dbo.Customers", new[] { "MembershipTypeId" });
+            DropColumn("dbo.Customers", "MembershipTypeId");
             DropTable("dbo.MembershipTypes");
         }
     }

@@ -39,9 +39,21 @@ namespace ReadMe.Controllers
         [HttpPost] // if my action modify data it should never be accesible by HttpGet
         public ActionResult Save(Customer customer)
         {
+            if (customer.Id == 0)
+                _context.Customers.Add(customer);
+            else
+            {
+                // method Single instead of SingleOrDefault - if the given customer
+                // is not found this is going to throw up an exception
+                // I do not want to handle the sceanrio where given coustomer is not
+                // found bcs this action should be called as a result of posting my customer form
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+                customerInDb.Name = customer.Name;
+                customerInDb.DateOfBirth = customer.DateOfBirth;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+            }
 
-            
-            _context.Customers.Add(customer); // it's not written to the database, it's just in a memory
             _context.SaveChanges(); // this written changes to database
 
             return RedirectToAction("Index", "Customers");
