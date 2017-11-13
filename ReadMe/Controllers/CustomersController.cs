@@ -37,8 +37,10 @@ namespace ReadMe.Controllers
         }
 
         [HttpPost] // if my action modify data it should never be accesible by HttpGet
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
+
+            
             _context.Customers.Add(customer); // it's not written to the database, it's just in a memory
             _context.SaveChanges(); // this written changes to database
 
