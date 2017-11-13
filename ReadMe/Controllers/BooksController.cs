@@ -39,7 +39,6 @@ namespace ReadMe.Controllers
                 return HttpNotFound();
 
             return View(book);
-
         }
 
     }
