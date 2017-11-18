@@ -12,17 +12,29 @@
 else
 {
     <h2>Książki przeczytane:</h2>
+    <div>
+        @Html.ActionLink("New book", "New", "Books", null, new { @class = "btn btn-primary btn-large" })
+    </div>
+    <br />
 
     <table class="table table-bordered table-hover">
-        @foreach (var book in Model)
-        {
+        <thead>
             <tr>
-                <td>@Html.ActionLink(book.Name, "Details", "Books", new { id = book.Id }, null)</td>
+                <th>Title</th>
+                <th>Genre</th>
             </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(book.Name, "Edit", "Books", new { id = book.Id }, null)</td>
+                    <td>@book.Genre.Name</td>
+                </tr>
 
-        }
+            }
+        </tbody>
     </table>
 }
 
-@*@model IEnumerable<ReadMe.Models.Book>*@
 
