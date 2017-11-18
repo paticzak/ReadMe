@@ -20,6 +20,7 @@ else
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Title</th>
                 <th>Genre</th>
             </tr>
@@ -28,6 +29,7 @@ else
             @foreach (var book in Model)
             {
                 <tr>
+                    <td>@book.Id</td>
                     <td>@Html.ActionLink(book.Name, "Edit", "Books", new { id = book.Id }, null)</td>
                     <td>@book.Genre.Name</td>
                 </tr>

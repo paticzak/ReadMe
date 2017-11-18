@@ -26,19 +26,31 @@ namespace ReadMe.Controllers
             _context.Dispose();
         }
 
-        public ActionResult CustomerForm()
+        public ViewResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new CustomerFormViewModel
             {
                 MembershipTypes = membershipTypes
             };
-            return View(viewModel);
+            return View("CustomerForm", viewModel);
         }
 
         [HttpPost] // if my action modify data it should never be accesible by HttpGet
         public ActionResult Save(Customer customer)
         {
+            if(!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("CustomerForm", viewModel);
+            }
+
+
             if (customer.Id == 0)
                 _context.Customers.Add(customer);
             else

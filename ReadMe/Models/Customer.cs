@@ -10,7 +10,7 @@ namespace ReadMe.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Wpisz tytuł książki")]
         [StringLength(255)]
         public string Name { get; set; }
 
@@ -23,6 +23,7 @@ namespace ReadMe.Models
 
         public MembershipType MembershipType { get; set; } // navigation property / allows us to navigate from one type to another
 
+     
         [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; } // it will treat it as foreign key
 

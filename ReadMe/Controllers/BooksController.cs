@@ -24,30 +24,36 @@ namespace ReadMe.Controllers
             _context.Dispose();
         }
 
-        public ActionResult New()
+        public ViewResult New()
         {
             var genres = _context.Genres.ToList();
-            var viewModel = new NewBookViewModel
+
+            var viewModel = new BookFormViewModel
             {
                 Genres = genres
             };
-            return View(viewModel);
+
+            return View("BookForm", viewModel);
         }
 
-        [HttpPost]
+        [HttpPost] 
         public ActionResult Save(Book book)
         {
-            if (book.Id == 0)
-                _context.Books.Add(book);
-            else
+            
+
+            if (book.Id != 0)
             {
                 var bookInDb = _context.Books.Single(b => b.Id == book.Id);
                 bookInDb.Name = book.Name;
                 bookInDb.Author = book.Author;
                 bookInDb.Genre = book.Genre;
+            }             
+            else
+            {
+                _context.Books.Add(book);
             }
 
-            _context.SaveChanges();       
+            _context.SaveChanges(); // this written changes to database
 
             return RedirectToAction("Index", "Books");
         }
@@ -59,12 +65,12 @@ namespace ReadMe.Controllers
             if (book == null)
                 return HttpNotFound();
 
-            var viewModel = new NewBookViewModel
+            var viewModel = new BookFormViewModel
             {
                 Book = book,
                 Genres = _context.Genres.ToList()
             };
-            return View("New", viewModel);
+            return View("BookForm", viewModel);
         }
 
         // GET: /Users/
