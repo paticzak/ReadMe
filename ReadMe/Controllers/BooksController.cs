@@ -37,20 +37,19 @@ namespace ReadMe.Controllers
         }
 
         [HttpPost] 
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Book book)
         {
-            
-
-            if (book.Id != 0)
+            if (book.Id == 0)
             {
+                _context.Books.Add(book);
+            }             
+            else
+            {            
                 var bookInDb = _context.Books.Single(b => b.Id == book.Id);
                 bookInDb.Name = book.Name;
                 bookInDb.Author = book.Author;
-                bookInDb.Genre = book.Genre;
-            }             
-            else
-            {
-                _context.Books.Add(book);
+                bookInDb.GenreId = book.GenreId;
             }
 
             _context.SaveChanges(); // this written changes to database

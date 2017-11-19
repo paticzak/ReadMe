@@ -11,8 +11,10 @@ namespace ReadMe.Models
         public int Id { get; set; }
 
         [Display(Name = "Title")]
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Author { get; set; }
        
         public Genre Genre { get; set; }

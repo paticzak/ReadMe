@@ -37,6 +37,7 @@ namespace ReadMe.Controllers
         }
 
         [HttpPost] // if my action modify data it should never be accesible by HttpGet
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if(!ModelState.IsValid)
