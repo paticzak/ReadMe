@@ -1,4 +1,6 @@
-﻿using ReadMe.Models;
+﻿using AutoMapper;
+using ReadMe.App_Start;
+using ReadMe.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,6 +17,7 @@ namespace ReadMe
     {
         protected void Application_Start()
         {
+            Mapper.Initialize(c => c.AddProfile<MappingProfile>());
             GlobalConfiguration.Configure(WebApiConfig.Register);
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             GlobalConfiguration.Configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
