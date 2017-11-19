@@ -11,15 +11,15 @@ namespace ReadMe.Models
         public int Id { get; set; }
 
         [Display(Name = "Title")]
-        [Required]
+        [Required(ErrorMessage = "Wpisz tytuł książki")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Wpisz autora książki")]
         public string Author { get; set; }
        
         public Genre Genre { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Wybierz gatunek książki")]
         [Display(Name = "Genre")]
         public byte GenreId { get; set; }
 
