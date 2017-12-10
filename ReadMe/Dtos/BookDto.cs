@@ -17,5 +17,7 @@ namespace ReadMe.Dtos
         [Required(ErrorMessage = "Wpisz autora książki")]
         public string Author { get; set; }
         public byte GenreId { get; set; }
+
+        public GenreDto Genre { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using ReadMe.Dtos;
 using ReadMe.Models;
 using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -21,7 +22,10 @@ namespace ReadMe.Controllers.Api
          // GET /api/books - get all books
         public IEnumerable<BookDto> GetBooks()
         {
-            return _context.Books.ToList().Select(Mapper.Map<Book, BookDto>);
+            return _context.Books
+                .Include(b => b.Genre)
+                .ToList()
+                .Select(Mapper.Map<Book, BookDto>);
         }
 
 

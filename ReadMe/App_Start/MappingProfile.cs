@@ -16,12 +16,14 @@ namespace ReadMe.App_Start
             Mapper.CreateMap<Customer, CustomerDto>();
             Mapper.CreateMap<Book, BookDto>();
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
+            Mapper.CreateMap<Genre, GenreDto>();
 
 
             // Dto to Domain
             Mapper.CreateMap<CustomerDto, Customer>();
             Mapper.CreateMap<BookDto, Book>();
             Mapper.CreateMap<MembershipTypeDto, MembershipType>();
+            Mapper.CreateMap<GenreDto, Genre>();
         }
     }
 }
