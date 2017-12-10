@@ -24,6 +24,7 @@ namespace ReadMe.Controllers
             _context.Dispose();
         }
 
+        [Authorize(Roles = RoleName.CanManageBooks)]
         public ViewResult New()
         {
             var genres = _context.Genres.ToList();
@@ -85,7 +86,10 @@ namespace ReadMe.Controllers
         // GET: /Users/
         public ActionResult Index()
         {
-            return View();
+            if(User.IsInRole(RoleName.CanManageBooks))
+                return View("List");
+
+            return View("ReadOnlyList");
         }
 
         public ActionResult Details(int id)

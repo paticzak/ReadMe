@@ -229,6 +229,10 @@
     <Compile Include="Migrations\201711132123008_PopulateGenres.Designer.cs">
       <DependentUpon>201711132123008_PopulateGenres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712101555271_SeedUsers.cs" />
+    <Compile Include="Migrations\201712101555271_SeedUsers.Designer.cs">
+      <DependentUpon>201712101555271_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -236,6 +240,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
@@ -465,12 +470,13 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
-    <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Books\List.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Books\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Books\BookForm.cshtml" />
+    <Content Include="Views\Books\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -512,6 +518,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711132123008_PopulateGenres.resx">
       <DependentUpon>201711132123008_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712101555271_SeedUsers.resx">
+      <DependentUpon>201712101555271_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

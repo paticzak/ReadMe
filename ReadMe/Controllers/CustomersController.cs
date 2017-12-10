@@ -9,6 +9,7 @@ using ReadMe.ViewModels;
 
 namespace ReadMe.Controllers
 {
+    [Authorize]
     public class CustomersController : Controller
     {
         // DbContext to access the database:
