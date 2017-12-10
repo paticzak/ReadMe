@@ -90,9 +90,10 @@ namespace ReadMe.Controllers
         // GET: /Users/
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            // var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            // I don't need this line bcs I get the customer list from API
 
-            return View(customers);
+            return View();
         }
 
         // GET: /Users/Details/id
