@@ -54,6 +54,7 @@ namespace ReadMe.Controllers
 
             if (customer.Id == 0)
                 _context.Customers.Add(customer);
+
             else
             {
                 // method Single instead of SingleOrDefault - if the given customer

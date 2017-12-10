@@ -40,21 +40,20 @@ namespace ReadMe.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Book book)
         {
-            if (!ModelState.IsValid)
-            {
-                var viewModel = new BookFormViewModel
-                {
-                    Book = book,
-                    Genres = _context.Genres.ToList()
-                };
+            //if (!ModelState.IsValid)
+            //{
+            //    var viewModel = new BookFormViewModel
+            //    {
+            //        Book = book,
+            //        Genres = _context.Genres.ToList()
+            //    };
 
-                return View("BookForm", viewModel);
-            }
+            //    return View("BookForm", viewModel);
+            //}
 
             if (book.Id == 0)
-            {
                 _context.Books.Add(book);
-            }             
+                     
             else
             {            
                 var bookInDb = _context.Books.Single(b => b.Id == book.Id);
