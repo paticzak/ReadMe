@@ -28,11 +28,13 @@ namespace ReadMe
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1931549750396078",
+               appSecret: "7af17f7b992447ef692fb74b0069067f");
 
-            //app.UseGoogleAuthentication();
+            //app.UseGoogleAuthentication(
+            //    ClientId: "757201931760-1sq3tiku8aksr5r1ghn6snd8ktv45nhd.apps.googleusercontent.com",
+            //    ClientSecret: "QiXYxmrXd7InqlGOUQ-xHXY7");
         }
     }
 }
