@@ -16,5 +16,8 @@ namespace ReadMe.Dtos
         public DateTime? DateOfBirth { get; set; }
         public bool IsSubscribedToNewsletter { get; set; }
         public byte MembershipTypeId { get; set; } // it will treat it as foreign key
+
+        public MembershipTypeDto MembershipType { get; set; }
+
     }
 }
