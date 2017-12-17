@@ -33,8 +33,12 @@ namespace ReadMe
                appSecret: "7af17f7b992447ef692fb74b0069067f");
 
             //app.UseGoogleAuthentication(
-            //    ClientId: "757201931760-1sq3tiku8aksr5r1ghn6snd8ktv45nhd.apps.googleusercontent.com",
-            //    ClientSecret: "QiXYxmrXd7InqlGOUQ-xHXY7");
+            //    clientId: "757201931760-k32ppecupga6akfd29sn9vrreh4jmgj3.apps.googleusercontent.com",
+            //    clientSecret: "urJUGpTw2yczAIs3_PPySPZk");
+
+            app.UseGoogleAuthentication(
+                clientId: "757201931760-k32ppecupga6akfd29sn9vrreh4jmgj3.apps.googleusercontent.com",
+                clientSecret: "urJUGpTw2yczAIs3_PPySPZk");
         }
     }
 }
