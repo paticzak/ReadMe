@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ReadMe.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Książki przeczytane:</h2>
+
+
+<table id="books" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Gatunek</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+@section scripts
+         {
+    <script>
+        $(document).ready(function () {
+            var table = $("#books").DataTable({
+                ajax: {
+                    url: "/api/books",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                    },
+                    {
+                        data: "author"
+                    },
+                    {
+                        data: "genre.name"
+                    }
+                ]
+            });
+
+        });
+    </script>
+}
+
+
+
+
+
+
