@@ -1,0 +1,65 @@
+﻿@using Smile;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    Network net = new Network();
+
+    //net.ReadFile(@"C:\Users\Patrycja\Documents\tutorial_a.xdsl");
+
+
+    net.ReadFile(@"C:\Users\Patrycja\Desktop\Praca inzynierska\nastroj-ksiazka-kategoria-okrojone-poprawione.xdsl");
+    //net.ReadFile(@"C:\Users\Patrycja\Desktop\Praca inzynierska\ReadMe2.xdsl");
+    net.UpdateBeliefs();
+    int outcomeIndex;
+
+
+    // Getting the index of the "Failure" outcome:
+    net.SetEvidence("nastroj", "dobry");
+    net.SetEvidence("wciagajaca", "tak");
+    net.UpdateBeliefs();
+    String[] aGatunekOutcomeIds = net.GetOutcomeIds("refWciag");
+    for (outcomeIndex = 0; outcomeIndex < aGatunekOutcomeIds.Length; outcomeIndex++)
+    {
+        if ("tak".Equals(aGatunekOutcomeIds[outcomeIndex]))
+        {
+            break;
+        }
+    }
+
+    double[] aValues = net.GetNodeValue("refWciag");
+    double P_NastrojIsDobryJakaKsiazkaIsWciagajacaGatunekIsRomans = aValues[outcomeIndex];
+
+
+}
+
+<h2>Tu będą wyniki</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Node Id</th>
+            <th>net[handle]</th>
+            <th>Node Name</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (int handle in net)
+        {
+            <tr>
+                <td>@handle</td>
+                <td>@net[handle]</td>
+                <td>@net.GetNodeName(handle)</td>
+            </tr>
+        }
+
+    </tbody>
+
+
+</table>
+
+<h3>P(Nastroj = dobry | JakaKsiazka = wciagajaca) = @P_NastrojIsDobryJakaKsiazkaIsWciagajacaGatunekIsRomans</h3>
+  
