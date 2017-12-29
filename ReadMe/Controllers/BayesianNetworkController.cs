@@ -30,37 +30,36 @@ namespace ReadMe.Controllers
         }
 
         [HttpPost]
-        public ActionResult RenderForm(string jakiNastroj, string bookType)
+        public ActionResult RenderForm(string userMood, string bookType1, string bookType2)
         {            
             Network net = new Network();
 
             net.ReadFile(@"C:\Users\Patrycja\Desktop\Praca inzynierska\nastroj-ksiazka-kategoria-okrojone-poprawione.xdsl");
             net.UpdateBeliefs();
 
-            //int outcomeIndex;
             double[] FindBiggestValue = new double[10];
             int i = 0;
             
-            net.SetEvidence("nastroj", jakiNastroj);
-            net.SetEvidence(bookType, "tak");
+            net.SetEvidence("nastroj", userMood);
+            net.SetEvidence(bookType1, "tak");
+            net.SetEvidence(bookType2, "tak");
             net.UpdateBeliefs();
 
             for (int NodeId = 7; NodeId <= 16; NodeId++)
             {
                 String[] aThirdLayerOutcomeIds = net.GetOutcomeIds(net[NodeId]);
-                int outcomeIndex1;
-                for (outcomeIndex1 = 0; outcomeIndex1 < aThirdLayerOutcomeIds.Length; outcomeIndex1++)
-                    if ("tak".Equals(aThirdLayerOutcomeIds[outcomeIndex1]))
+                int outcomeIndex;
+                for (outcomeIndex = 0; outcomeIndex < aThirdLayerOutcomeIds.Length; outcomeIndex++)
+                    if ("tak".Equals(aThirdLayerOutcomeIds[outcomeIndex]))
                         break;
 
                 double[] pValues = net.GetNodeValue(net[NodeId]);
-                double P_ChosenBook = pValues[outcomeIndex1];
+                double P_ChosenBook = pValues[outcomeIndex];
 
                 // DODAJĘ WARTOŚCI PRAWDOPODOBIEŃSTW DO TABLICY
                 FindBiggestValue[i] = P_ChosenBook;
                 i++;
 
-                //Console.WriteLine("P(Nastroj = {0} | JakaKsiazka = {1}) = | \"Gatunek\" {2}) = {3}", userinputNastroj, userInputJakaKsiazka, net[NodeId], P_ChosenBook);
             }
 
             // ZNAJDUJĘ WARTOŚĆ ORAZ POZYCJĘ NAJWIĘKSZEGO PRAWDOPODOBIEŃSTWA W TABLICY
@@ -69,41 +68,22 @@ namespace ReadMe.Controllers
             //Console.WriteLine("max number: " + maxNumber + "index" + position);
             string chosenBookCategory = net[position + 7];
 
-            // WYŚWIETLAM NAZWĘ 
             
-            //Console.WriteLine("najbardziej prawdopodobna kategoria książki: " + ChosenBookCategory);
-
-            //if (chosenBookCategory == "refWciag")
-                
-            //{
-            //    //Console.WriteLine("dobry wybór"); 
-            //}
-            //else
-            //{
-            //    //Console.WriteLine("inna kategoria niz refWciag");
-            //}
 
 
-
-            //// "Branie" indexu z konkretnej kategorii
-            //String[] aGatunekOutcomeIds = net.GetOutcomeIds("refWciag");
-            //for (outcomeIndex = 0; outcomeIndex < aGatunekOutcomeIds.Length; outcomeIndex++)
-            //{
-            //    if ("tak".Equals(aGatunekOutcomeIds[outcomeIndex]))
-            //    {
-            //        break;
-            //    }
-            //}
-
-            //double[] aValues = net.GetNodeValue("refWciag");
-            //double P_ChosenBook = aValues[outcomeIndex];
 
             //ViewBag.ChosenBook = P_ChosenBook;
-            ViewBag.UserMood = jakiNastroj;
-            ViewBag.BookType = bookType;
+            ViewBag.UserMood = userMood;
+            ViewBag.BookType1 = bookType1;
+            ViewBag.BookType2 = bookType2;
             ViewBag.MaxNumber = maxNumber;
             ViewBag.Position = position;
             ViewBag.ChosenBookCategory = chosenBookCategory;
+
+            if (chosenBookCategory == "poz_wciag")
+            {
+                return View("~/Views/Books/ReadOnlyList.cshtml");
+            }
 
             return View("Index");
         }
