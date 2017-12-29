@@ -9,31 +9,15 @@
 
 }
 
-<h2>Tu będą wyniki</h2>
+@*<h2>Tu będą wyniki</h2>*@
+<h2>Wyniki:</h2>
 <form action="/BayesianNetwork/RenderForm" method="post">
-        <input type="text" name="jakiNastroj" />
+    
+        <input type="text" name="jakiNastroj" placeholder="Nastrój"/>
+        <input type="text" name="bookType" placeholder="Rodzaj książki"/>
         <input type="submit" value="Submit" />
-    </form>
+</form>
 
-@*<table>
-    <thead>
-        <tr>
-            <th>Node Id</th>
-           <th>@ViewBag.Net[handle]</th>
-            <th>Node Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (int handle in @ViewBag.Net)
-        {
-            <tr>
-                <td>@handle</td>
-                <td>@ViewBag.Net[handle]</td>
-                <td>@ViewBag.Net.GetNodeName(handle)</td>
-            </tr>
-        }
-    </tbody>
-</table>*@
-
-<h3>P(Nastroj = dobry | JakaKsiazka = wciagajaca) = @ViewBag.chosenBook</h3>
+<h3>P(Nastroj = @ViewBag.UserMood | JakaKsiazka = @ViewBag.BookType) = @ViewBag.MaxNumber</h3>
+<h3>Najbardziej prawdopodobna kategoria książek: @ViewBag.ChosenBookCategory</h3>
   
