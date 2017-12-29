@@ -5,61 +5,35 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
-    Network net = new Network();
-
-    //net.ReadFile(@"C:\Users\Patrycja\Documents\tutorial_a.xdsl");
-
-
-    net.ReadFile(@"C:\Users\Patrycja\Desktop\Praca inzynierska\nastroj-ksiazka-kategoria-okrojone-poprawione.xdsl");
-    //net.ReadFile(@"C:\Users\Patrycja\Desktop\Praca inzynierska\ReadMe2.xdsl");
-    net.UpdateBeliefs();
-    int outcomeIndex;
-
-
-    // Getting the index of the "Failure" outcome:
-    net.SetEvidence("nastroj", "dobry");
-    net.SetEvidence("wciagajaca", "tak");
-    net.UpdateBeliefs();
-    String[] aGatunekOutcomeIds = net.GetOutcomeIds("refWciag");
-    for (outcomeIndex = 0; outcomeIndex < aGatunekOutcomeIds.Length; outcomeIndex++)
-    {
-        if ("tak".Equals(aGatunekOutcomeIds[outcomeIndex]))
-        {
-            break;
-        }
-    }
-
-    double[] aValues = net.GetNodeValue("refWciag");
-    double P_NastrojIsDobryJakaKsiazkaIsWciagajacaGatunekIsRomans = aValues[outcomeIndex];
-
+    
 
 }
 
 <h2>Tu będą wyniki</h2>
-<table>
+<form action="/BayesianNetwork/RenderForm" method="post">
+        <input type="text" name="jakiNastroj" />
+        <input type="submit" value="Submit" />
+    </form>
+
+@*<table>
     <thead>
         <tr>
             <th>Node Id</th>
-            <th>net[handle]</th>
+           <th>@ViewBag.Net[handle]</th>
             <th>Node Name</th>
         </tr>
-
     </thead>
     <tbody>
-
-        @foreach (int handle in net)
+        @foreach (int handle in @ViewBag.Net)
         {
             <tr>
                 <td>@handle</td>
-                <td>@net[handle]</td>
-                <td>@net.GetNodeName(handle)</td>
+                <td>@ViewBag.Net[handle]</td>
+                <td>@ViewBag.Net.GetNodeName(handle)</td>
             </tr>
         }
-
     </tbody>
+</table>*@
 
-
-</table>
-
-<h3>P(Nastroj = dobry | JakaKsiazka = wciagajaca) = @P_NastrojIsDobryJakaKsiazkaIsWciagajacaGatunekIsRomans</h3>
+<h3>P(Nastroj = dobry | JakaKsiazka = wciagajaca) = @ViewBag.chosenBook</h3>
   
