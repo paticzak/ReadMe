@@ -22,13 +22,15 @@ namespace ReadMe.Controllers
         {            
             Network net = new Network();
 
-            net.ReadFile(@"C:\Users\Patrycja\Desktop\Praca inzynierska\nastroj-ksiazka-kategoria-okrojone-poprawione.xdsl");
+            net.ReadFile(@"C:\Users\Patrycja\Desktop\Praca inzynierska\proba.xdsl");
             net.UpdateBeliefs();
 
-            double[] FindBiggestValue = new double[10];
+            double[] FindBiggestValue = new double[10]; 
             int i = 0;
             
             net.SetEvidence("nastroj", userMood);
+            net.SetEvidence(bookType1, "tak");
+            net.SetEvidence(bookType2, "tak");
         
             net.UpdateBeliefs();
 
@@ -64,7 +66,8 @@ namespace ReadMe.Controllers
 
             TempData["Category"] = category;
           
-            return RedirectToAction("ShowBooksFromChosenCategory", "Books");
+            //return RedirectToAction("ShowBooksFromChosenCategory", "Books");
+            return View("Index");  
 
         }
     }
