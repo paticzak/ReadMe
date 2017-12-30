@@ -85,13 +85,13 @@ namespace ReadMe.Controllers
             ViewBag.Position = position;
             ViewBag.ChosenBookCategory = chosenBookCategory;
 
-            string category = "Pay as You Go";
+            string category = chosenBookCategory;
 
             TempData["Category"] = category;
 
             if (chosenBookCategory == "poz_wciag")
             {
-                return RedirectToAction("Index", "Customers");
+                return RedirectToAction("ShowBooksFromChosenCategory", "Books");
             }
 
             return View("Index");

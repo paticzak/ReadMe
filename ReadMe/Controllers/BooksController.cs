@@ -90,10 +90,20 @@ namespace ReadMe.Controllers
         // GET: /Users/
         public ActionResult Index()
         {
-            if(User.IsInRole(RoleName.CanManageBooks))
+            if (User.IsInRole(RoleName.CanManageBooks))
                 return View("List");
 
             return View("ReadOnlyList");
+        }
+
+        public ActionResult ShowBooksFromChosenCategory()
+        {
+            string dataFromNetwork = TempData["Category"].ToString();
+            var books = _context.Books.Include(c => c.Genre).Where(c => c.BookType.Name.Equals(dataFromNetwork)).ToList();
+            //var books = _context.Books.Include(c => c.Genre).Where(c => c.MembershipType.Name.Equals(dataFromNetwork)).ToList();
+            // I don't need this line bcs I get the customer list from API
+
+            return View(books);
         }
 
         public ActionResult Details(int id)

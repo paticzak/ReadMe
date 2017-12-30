@@ -508,6 +508,7 @@
     <Content Include="Views\Books\BookForm.cshtml" />
     <Content Include="Views\Books\ReadOnlyList.cshtml" />
     <Content Include="Views\BayesianNetwork\Index.cshtml" />
+    <Content Include="Views\Books\ShowBooksFromChosenCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
