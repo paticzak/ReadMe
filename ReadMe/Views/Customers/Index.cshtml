@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        @*@foreach (var customer in Model)
+        @foreach (var customer in Model)
             {
                 <tr>
                     <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
@@ -25,12 +25,12 @@
                         <button data-customer-id="@customer.Id" class="btn-link js-delete">Delete</button>
                     </td>
                 </tr>
-            }*@
+            }
     </tbody>
 </table>
 
 
-@section scripts
+@*@section scripts
 {
     <script>
         $(document).ready(function () {
@@ -76,4 +76,4 @@
             });
         });
     </script>
-}
+}*@

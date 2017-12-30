@@ -80,9 +80,13 @@ namespace ReadMe.Controllers
             ViewBag.Position = position;
             ViewBag.ChosenBookCategory = chosenBookCategory;
 
+            string category = "Pay as You Go";
+
+            TempData["Category"] = category;
+
             if (chosenBookCategory == "poz_wciag")
             {
-                return View("~/Views/Books/ReadOnlyList.cshtml");
+                return RedirectToAction("Index", "Customers");
             }
 
             return View("Index");

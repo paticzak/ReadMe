@@ -92,10 +92,11 @@ namespace ReadMe.Controllers
         // GET: /Users/
         public ActionResult Index()
         {
-            // var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+            string dataFromNetwork = TempData["Category"].ToString();
+            var customers = _context.Customers.Include(c => c.MembershipType).Where(c => c.MembershipType.Name.Equals(dataFromNetwork)).ToList();
             // I don't need this line bcs I get the customer list from API
 
-            return View();
+            return View(customers);
         }
 
         // GET: /Users/Details/id
