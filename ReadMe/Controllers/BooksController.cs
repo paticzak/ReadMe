@@ -28,10 +28,12 @@ namespace ReadMe.Controllers
         public ViewResult New()
         {
             var genres = _context.Genres.ToList();
+            var bookTypes = _context.BookTypes.ToList();
 
             var viewModel = new BookFormViewModel
             {
-                Genres = genres
+                Genres = genres,
+                BookTypes = bookTypes
             };
 
             return View("BookForm", viewModel);
@@ -61,6 +63,7 @@ namespace ReadMe.Controllers
                 bookInDb.Name = book.Name;
                 bookInDb.Author = book.Author;
                 bookInDb.GenreId = book.GenreId;
+                bookInDb.BookTypeId = book.BookTypeId;
             }
 
             _context.SaveChanges(); // this written changes to database
@@ -78,7 +81,8 @@ namespace ReadMe.Controllers
             var viewModel = new BookFormViewModel
             {
                 Book = book,
-                Genres = _context.Genres.ToList()
+                Genres = _context.Genres.ToList(),
+                BookTypes = _context.BookTypes.ToList()
             };
             return View("BookForm", viewModel);
         }

@@ -9,6 +9,7 @@ namespace ReadMe.ViewModels
     public class BookFormViewModel
     {
         public IEnumerable<Genre> Genres { get; set; }
+        public IEnumerable<BookType> BookTypes { get; set; }
         public Book Book { get; set; }
 
         public string Title

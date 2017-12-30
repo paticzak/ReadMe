@@ -25,6 +25,8 @@ namespace ReadMe.Models
         public byte GenreId { get; set; }
 
         public BookType BookType { get; set; }
+
+        [Display(Name = "Book type")]
         public byte BookTypeId { get; set; }
 
 

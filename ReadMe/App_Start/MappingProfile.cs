@@ -17,6 +17,7 @@ namespace ReadMe.App_Start
             Mapper.CreateMap<Book, BookDto>();
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
             Mapper.CreateMap<Genre, GenreDto>();
+            Mapper.CreateMap<BookType, BookTypeDto>();
 
 
             // Dto to Domain
@@ -24,6 +25,7 @@ namespace ReadMe.App_Start
             Mapper.CreateMap<BookDto, Book>();
             Mapper.CreateMap<MembershipTypeDto, MembershipType>();
             Mapper.CreateMap<GenreDto, Genre>();
+            Mapper.CreateMap<BookTypeDto, BookType>();
         }
     }
 }

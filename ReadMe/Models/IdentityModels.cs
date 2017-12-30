@@ -14,6 +14,7 @@ namespace ReadMe.Models
         public DbSet<Book> Books { get; set; }
         public DbSet<MembershipType> MembershipTypes { get; set; }
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<BookType> BookTypes { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection")

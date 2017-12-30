@@ -24,6 +24,7 @@ namespace ReadMe.Controllers.Api
         {
             return _context.Books
                 .Include(b => b.Genre)
+                .Include(b => b.BookType)
                 .ToList()
                 .Select(Mapper.Map<Book, BookDto>);
         }
