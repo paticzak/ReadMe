@@ -10,7 +10,6 @@ using ReadMe.ViewModels;
 
 namespace ReadMe.Controllers
 {
-    [AllowAnonymous]
     public class FindBookController : Controller
     {
         public ActionResult Index()
@@ -30,22 +29,7 @@ namespace ReadMe.Controllers
             int i = 0;
             
             net.SetEvidence("nastroj", userMood);
-
-            //if (bookType1 == "")
-            //{
-            //    net.SetEvidence(bookType2, "tak");
-            //}
-
-            //if(bookType2 == "")
-            //{
-            //    net.SetEvidence(bookType1, "tak");
-            //}
-            //if(bookType1 != "" && bookType2 != "")
-            //{
-            //    net.SetEvidence(bookType1, "tak");
-            //    net.SetEvidence(bookType2, "tak");
-            //}
-           
+        
             net.UpdateBeliefs();
 
             for (int NodeId = 7; NodeId <= 16; NodeId++)
