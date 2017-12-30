@@ -13,8 +13,12 @@
 @*<h2>Tu będą wyniki</h2>*@
 <h2>Wyniki:</h2>
 <form action="/BayesianNetwork/RenderForm" method="post">
+    <select id="drpType" name="userMood">
+        <option value="dobry">Dobry</option>
+        <option value="zly">Zły</option>
+    </select>
+    @*<input type="text" name="userMood" placeholder="Nastrój" />*@
 
-    <input type="text" name="userMood" placeholder="Nastrój" />
     <input type="text" name="bookType1" placeholder="Pierwszy rodzaj książki" />
     <input type="text" name="bookType2" placeholder="Drugi rodzaj książki" />
     <input type="submit" id="btn" value="Submit" />

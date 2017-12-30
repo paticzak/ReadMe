@@ -16,12 +16,16 @@ namespace ReadMe.Models
 
         [Required(ErrorMessage = "Wpisz autora książki")]
         public string Author { get; set; }
+        public int Popularity { get; set; }
        
         public Genre Genre { get; set; }
 
         [Required(ErrorMessage = "Wybierz gatunek książki")]
         [Display(Name = "Genre")]
         public byte GenreId { get; set; }
+
+        public BookType BookType { get; set; }
+        public byte BookTypeId { get; set; }
 
 
     }

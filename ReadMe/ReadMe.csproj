@@ -248,9 +248,18 @@
     <Compile Include="Migrations\201712101555271_SeedUsers.Designer.cs">
       <DependentUpon>201712101555271_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712301344089_AddPopularityToBook.cs" />
+    <Compile Include="Migrations\201712301344089_AddPopularityToBook.Designer.cs">
+      <DependentUpon>201712301344089_AddPopularityToBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712301402242_AddBookType.cs" />
+    <Compile Include="Migrations\201712301402242_AddBookType.Designer.cs">
+      <DependentUpon>201712301402242_AddBookType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookType.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -538,6 +547,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712101555271_SeedUsers.resx">
       <DependentUpon>201712101555271_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712301344089_AddPopularityToBook.resx">
+      <DependentUpon>201712301344089_AddPopularityToBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712301402242_AddBookType.resx">
+      <DependentUpon>201712301402242_AddBookType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

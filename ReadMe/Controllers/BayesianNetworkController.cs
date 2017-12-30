@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Smile;
 using Smile.Learning;
+using ReadMe.Models;
+using ReadMe.ViewModels;
 
 namespace ReadMe.Controllers
 {
@@ -41,8 +43,16 @@ namespace ReadMe.Controllers
             int i = 0;
             
             net.SetEvidence("nastroj", userMood);
-            net.SetEvidence(bookType1, "tak");
-            net.SetEvidence(bookType2, "tak");
+            if(bookType2 == "")
+            {
+                net.SetEvidence(bookType1, "tak");
+            }
+            if(bookType1 != "" && bookType2 != "")
+            {
+                net.SetEvidence(bookType1, "tak");
+                net.SetEvidence(bookType2, "tak");
+            }
+           
             net.UpdateBeliefs();
 
             for (int NodeId = 7; NodeId <= 16; NodeId++)
@@ -59,7 +69,6 @@ namespace ReadMe.Controllers
                 // DODAJĘ WARTOŚCI PRAWDOPODOBIEŃSTW DO TABLICY
                 FindBiggestValue[i] = P_ChosenBook;
                 i++;
-
             }
 
             // ZNAJDUJĘ WARTOŚĆ ORAZ POZYCJĘ NAJWIĘKSZEGO PRAWDOPODOBIEŃSTWA W TABLICY
@@ -67,10 +76,6 @@ namespace ReadMe.Controllers
             int position = Array.IndexOf(FindBiggestValue, maxNumber);
             //Console.WriteLine("max number: " + maxNumber + "index" + position);
             string chosenBookCategory = net[position + 7];
-
-            
-
-
 
             //ViewBag.ChosenBook = P_ChosenBook;
             ViewBag.UserMood = userMood;

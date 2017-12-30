@@ -1,0 +1,31 @@
+﻿@using Smile;
+@{
+    ViewBag.Title = "GetInformationFromNetwork";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var net = ViewBag.Message;
+    var P_ChosenBook = ViewBag.Message;
+}
+
+
+
+<h2>GetInformationFromNetwork</h2>
+
+@*@using (Html.BeginForm("GetInformationFromNetwork", "BayesianNetwork", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.Label("Nastroj")
+            @Html.TextBox("jakiNastroj")
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    }*@
+
+@*<form action="/BayesianNetwork/GetInformationFromNetwork" method="post">
+    <input type="text" name="jakiNastroj" /><br />
+    <input type="submit" value="Submit" />
+</form>*@
+
+<h3>P(Nastroj = dobry | JakaKsiazka = wciagajaca) = @P_ChosenBook</h3>
