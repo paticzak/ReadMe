@@ -66,8 +66,8 @@ namespace ReadMe.Controllers
 
             TempData["Category"] = category;
           
-            //return RedirectToAction("ShowBooksFromChosenCategory", "Books");
-            return View("Index");  
+            return RedirectToAction("ShowBooksFromChosenCategory", "Books");
+            //return View("Index");  
 
         }
     }
