@@ -11,20 +11,15 @@ namespace ReadMe.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
+            if(User.Identity.IsAuthenticated)
+            {
+                return View("AfterLogin");
+            }
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

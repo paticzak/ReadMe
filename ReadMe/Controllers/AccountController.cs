@@ -53,7 +53,7 @@ namespace ReadMe.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid username or password.");
+                    ModelState.AddModelError("", "Niepoprawna nazwa użytkownika lub hasło");
                 }
             }
 
