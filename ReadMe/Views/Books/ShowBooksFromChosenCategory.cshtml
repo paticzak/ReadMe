@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ShowBooksFromChosenCategory</h2>
+<h2>Proponowane książki</h2>
 
 <table id="books" class="table table-bordered table-hover">
     <thead>
@@ -12,7 +12,7 @@
             <th>Tytuł</th>
             <th>Autor</th>
             <th>Kategoria</th>
-            @*<th>Delete</th>*@
+            <th>Popularność</th>
         </tr>
     </thead>
     <tbody>
@@ -22,11 +22,8 @@
                 <td>@book.Name</td>
                 <td>@book.Author</td>
                 <td>@book.BookTypeId</td>
-                @*<td>
-                    <button data-customer-id="@customer.Id" class="btn-link js-delete">Delete</button>
-                </td>*@
+                <td>@book.Popularity</td>
             </tr>
         }
     </tbody>
 </table>
-

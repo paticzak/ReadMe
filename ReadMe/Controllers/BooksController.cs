@@ -64,6 +64,7 @@ namespace ReadMe.Controllers
                 bookInDb.Author = book.Author;
                 bookInDb.GenreId = book.GenreId;
                 bookInDb.BookTypeId = book.BookTypeId;
+                bookInDb.Popularity = book.Popularity;
             }
 
             _context.SaveChanges(); // this written changes to database
@@ -100,7 +101,6 @@ namespace ReadMe.Controllers
         {
             string dataFromNetwork = TempData["Category"].ToString();
             var books = _context.Books.Include(c => c.Genre).Where(c => c.BookType.Name.Equals(dataFromNetwork)).ToList();
-            // I don't need this line bcs I get the customer list from API
 
             return View(books);
         }
