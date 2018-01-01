@@ -27,3 +27,13 @@
         }
     </tbody>
 </table>
+
+@*@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('#books').DataTable({
+                "order": [[3, "asc"]]
+            });
+        });
+    </script>
+}*@

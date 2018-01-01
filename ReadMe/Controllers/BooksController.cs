@@ -100,7 +100,11 @@ namespace ReadMe.Controllers
         public ActionResult ShowBooksFromChosenCategory()
         {
             string dataFromNetwork = TempData["Category"].ToString();
-            var books = _context.Books.Include(c => c.Genre).Where(c => c.BookType.Name.Equals(dataFromNetwork)).ToList();
+            var books = _context.Books
+                .Include(c => c.Genre)
+                .Where(c => c.BookType.Name.Equals(dataFromNetwork))
+                .OrderByDescending(c => c.Popularity)
+                .ToList();
 
             return View(books);
         }
