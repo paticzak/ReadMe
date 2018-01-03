@@ -22,7 +22,7 @@ namespace ReadMe.Controllers
         {            
             Network net = new Network();
 
-            net.ReadFile(@"C:\Users\Patrycja\Desktop\Praca inzynierska\proba.xdsl");
+            net.ReadFile(@"C:\Users\Patrycja\Desktop\Praca inzynierska\ReadMeFindBook.xdsl");
             net.UpdateBeliefs();
 
             double[] FindBiggestValue = new double[10]; 
