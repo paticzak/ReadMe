@@ -509,6 +509,7 @@
     <Content Include="Views\FindBook\Index.cshtml" />
     <Content Include="Views\Books\ShowBooksFromChosenCategory.cshtml" />
     <Content Include="Views\Books\BooksFromChosenCategoryAdmin.cshtml" />
+    <Content Include="Views\Home\ProposeBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

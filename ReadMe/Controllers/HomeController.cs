@@ -18,6 +18,11 @@ namespace ReadMe.Controllers
             return View();
         }
 
+        public ActionResult ProposeBook()
+        {
+            return View("ProposeBook");
+        }
+
         public ActionResult Contact()
         {
             return View();
