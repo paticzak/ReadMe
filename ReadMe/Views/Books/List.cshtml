@@ -58,21 +58,21 @@
                     {
                         data: "id",
                         render: function (data) {
-                            return "<button class='btn-link js-update' data-book-id=" + data + ">Usuń</button>";
+                            return "<button class='btn-link js-delete' data-book-id=" + data + ">Usuń</button>";
                         }
                     }
                 ]
             });
-            $("#books").on("click", ".js-update", function () {
+          
+            $("#books").on("click", ".js-delete", function () {
                 var button = $(this);
 
                 bootbox.confirm("Na pewno chcesz usunąć tę książkę z listy?", function (result) {
                     if (result) {
                         $.ajax({
                             url: "/api/books/" + button.attr("data-book-id"),
-                            method: "DeleteBook",
+                            method: "DELETE",
                             success: function () {
-                                //console.log("Sukces");
                                 table.row(button.parents("tr")).remove().draw();
                             }
                         });
@@ -80,24 +80,6 @@
                     }
                 });
             });
-
-            //$("#books").on("click", ".js-delete", function () {
-            //    var button = $(this);
-
-            //    bootbox.confirm("Na pewno chcesz usunąć tę książkę z listy?", function (result) {
-            //        if (result) {
-            //            $.ajax({
-            //                url: "/api/books/" + button.attr("data-book-id"),
-            //                method: "DELETE",
-            //                success: function () {
-
-            //                    //table.row(button.parents("tr")).remove().draw();
-            //                }
-            //            });
-            //            bootbox.alert("Książka została usunięta z listy");
-            //        }
-            //    });
-            //});
         });
     </script>
 }

@@ -13,40 +13,41 @@
             <th>Gatunek</th>
             <th>Popularność</th>
             <th></th>
-
         </tr>
     </thead>
     <tbody>
         @foreach (var book in Model)
         {
             <tr>
-                <td>@book.Name</td>
+                <td style="vertical-align: middle;">@book.Name</td>
                 <td>@book.Author</td>
                 <td>@book.Genre.Name</td>
                 <td>@book.Popularity</td>
-                <td><button data-book-id="@book.Id" class="btn-link js-update-popularity">Chcę przeczytać</button></td>
-                @*<td>@Html.ActionLink("text", "IncreasePopularity", "Books", new { id = book.Id }, null)</td>*@
+                <td><button data-book-id="@book.Id" class="btn btn-primary js-update-popularity">Chcę przeczytać</button></td>
             </tr>
         }
     </tbody>
 </table>
 
+
+<style>
+    .table > tbody > tr > td {
+        vertical-align: middle;
+    }
+</style>
+
+
 @section scripts {
     <script>
         $(document).ready(function () {
             $("#books .js-update-popularity").on("click", function () {
-                if (confirm("Chcesz ją przeczytać?")) {
-                    $.ajax({
-                        url: '/Books/IncreasePopularity/' + $(this).attr("data-book-id"),
-                        //url: "/api/books/" + $(this).attr("data-book-id"),
-                        method: "POST",
-                        success: function () {
-                            console.log("Udało się");
-                        }
-                    });
-                }
+                $.ajax({
+                    url: '/Books/IncreasePopularity/' + $(this).attr("data-book-id"),
+                    method: "POST"
+                });
+                $(this).prop("disabled", true);
+                $(this).css('background', 'green');
             });
-
         });
     </script>
 }
