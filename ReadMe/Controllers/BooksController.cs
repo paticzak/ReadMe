@@ -88,6 +88,7 @@ namespace ReadMe.Controllers
             return View("BookForm", viewModel);
         }
 
+        [HttpPost]
         public ActionResult IncreasePopularity(int id, Book book)
         {
             var bookInDb = _context.Books.Single(b => b.Id == book.Id);
@@ -95,7 +96,8 @@ namespace ReadMe.Controllers
 
             _context.SaveChanges();
 
-            return Content("Udało się");
+            //return View("ShowBooksFromChosenCategory");
+            return Content("Sukces");
         }
 
         // GET: /Users/

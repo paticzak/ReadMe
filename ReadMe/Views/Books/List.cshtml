@@ -58,12 +58,12 @@
                     {
                         data: "id",
                         render: function (data) {
-                            return "<button class='btn-link js-delete' data-book-id=" + data + ">Usuń</button>";
+                            return "<button class='btn-link js-update' data-book-id=" + data + ">Usuń</button>";
                         }
                     }
                 ]
             });
-            $("#books").on("click", ".js-delete", function () {
+            $("#books").on("click", ".js-update", function () {
                 var button = $(this);
 
                 bootbox.confirm("Na pewno chcesz usunąć tę książkę z listy?", function (result) {
@@ -72,7 +72,7 @@
                             url: "/api/books/" + button.attr("data-book-id"),
                             method: "DeleteBook",
                             success: function () {
-                                console.log("Sukces");
+                                //console.log("Sukces");
                                 table.row(button.parents("tr")).remove().draw();
                             }
                         });

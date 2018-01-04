@@ -76,6 +76,25 @@ namespace ReadMe.Controllers.Api
             _context.SaveChanges();
         }
 
+        //[HttpPut]
+        //public void IncreasePopularity(int id)
+        //{
+        //    BookDto bookDto;
+        //    if (!ModelState.IsValid)
+        //        throw new HttpResponseException(HttpStatusCode.BadRequest);
+
+        //    var bookInDb = _context.Books.SingleOrDefault(b => b.Id == id);
+        //    bookInDb.Popularity++;
+
+        //    if (bookInDb == null)
+        //        throw new HttpResponseException(HttpStatusCode.NotFound);
+
+        //    Mapper.Map(bookDto, bookInDb);
+
+        //    _context.SaveChanges();
+        //}
+
+
         // DELETE /api/books/1
         [HttpDelete]
         public void DeleteBook(int id)
