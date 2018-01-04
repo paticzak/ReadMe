@@ -59,7 +59,6 @@ namespace ReadMe.Controllers.Api
             return Created(new Uri(Request.RequestUri + "/" + book.Id), bookDto);
         }
 
-
         // PUT /api/books/1
         [HttpPut]
         public void UpdateBook(int id, BookDto bookDto)

@@ -88,6 +88,16 @@ namespace ReadMe.Controllers
             return View("BookForm", viewModel);
         }
 
+        public ActionResult IncreasePopularity(int id, Book book)
+        {
+            var bookInDb = _context.Books.Single(b => b.Id == book.Id);
+            bookInDb.Popularity++;
+
+            _context.SaveChanges();
+
+            return Content("Udało się");
+        }
+
         // GET: /Users/
         public ActionResult Index()
         {
@@ -109,6 +119,7 @@ namespace ReadMe.Controllers
             return View(books);
         }
 
+       
         public ActionResult Details(int id)
         {
             var book = _context.Books.Include(b => b.Genre).SingleOrDefault(b => b.Id == id);
