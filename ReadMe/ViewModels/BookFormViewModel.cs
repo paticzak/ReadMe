@@ -17,9 +17,9 @@ namespace ReadMe.ViewModels
              get
              {
                  if (Book != null && Book.Id != 0)
-                     return "Edit Book";
+                     return "Edytuj książkę";
  
-                 return "New Book";
+                 return "Dodaj nową książkę";
              }
          }
     }
