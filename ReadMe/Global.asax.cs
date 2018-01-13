@@ -46,8 +46,14 @@ namespace ReadMe
                 0x72,0x4c,0x95,0xb0,0xea,0xe1,0xbf,0xf8,0x2c,0xf3,0x1e,0x5d,0x92,0xa3,0x39,0x60
                 }
             );
-
-
         }
+        
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception exc = Server.GetLastError();
+            Server.ClearError();
+            Response.Redirect("/ErrorPage/ErrorMessage");
+        }
+
     }
 }

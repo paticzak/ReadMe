@@ -16,22 +16,35 @@ namespace ReadMe.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult ArrayHandler(string[] function_param)
+        {
+
+            if (function_param.Length > 0)
+            {
+                //some code                
+                return Content("Success");
+            }
+
+            return Content("Not working");
+
+        }
 
         [HttpPost]
         public ActionResult RenderForm(string userMood, string bookType1, string bookType2)
-        {            
+        {
             Network net = new Network();
 
             net.ReadFile(@"C:\Users\Patrycja\Desktop\Praca inzynierska\ReadMeFindBook.xdsl");
             net.UpdateBeliefs();
 
-            double[] FindBiggestValue = new double[10]; 
+            double[] FindBiggestValue = new double[10];
             int i = 0;
-            
+
             net.SetEvidence("nastroj", userMood);
             net.SetEvidence(bookType1, "tak");
             net.SetEvidence(bookType2, "tak");
-        
+
             net.UpdateBeliefs();
 
             for (int NodeId = 7; NodeId <= 16; NodeId++)
@@ -65,7 +78,7 @@ namespace ReadMe.Controllers
             string category = chosenBookCategory;
 
             TempData["Category"] = category;
-          
+
             return RedirectToAction("ShowBooksFromChosenCategory", "Books");
             //return View("Index");  
 

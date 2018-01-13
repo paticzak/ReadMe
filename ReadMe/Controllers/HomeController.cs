@@ -25,7 +25,7 @@ namespace ReadMe.Controllers
 
         public ActionResult Contact()
         {
-            return View();
+           return View();
         }
     }
 }
