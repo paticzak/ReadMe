@@ -5632,17 +5632,19 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     }
 
 .navbar-inverse {
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
     border-color: #e6e6e6;
 }
 
     .navbar-inverse .navbar-brand {
-        color: #999999;
+        color: white;
+        
     }
 
         .navbar-inverse .navbar-brand:hover,
         .navbar-inverse .navbar-brand:focus {
-            color: #333333;
+            color: white;
+            font-weight: bold;
             background-color: transparent;
         }
 
@@ -5651,19 +5653,21 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     }
 
     .navbar-inverse .navbar-nav > li > a {
-        color: #999999;
+        color: white;
     }
 
         .navbar-inverse .navbar-nav > li > a:hover,
         .navbar-inverse .navbar-nav > li > a:focus {
-            color: #333333;
+            color: white;
+            font-weight: bold;
             background-color: transparent;
         }
 
     .navbar-inverse .navbar-nav > .active > a,
     .navbar-inverse .navbar-nav > .active > a:hover,
     .navbar-inverse .navbar-nav > .active > a:focus {
-        color: #333333;
+        color: white;
+            font-weight: bold;
         background-color: transparent;
     }
 
@@ -8208,7 +8212,8 @@ button.close {
 }
 
 .navbar {
-    border-width: 0 1px 4px 1px;
+    /*border-width: 0 1px 4px 1px;*/
+    color: red;
 }
 
 .btn {
