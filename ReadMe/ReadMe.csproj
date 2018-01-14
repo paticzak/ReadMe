@@ -512,6 +512,7 @@
     <Content Include="Views\Books\ShowBooksFromChosenCategory.cshtml" />
     <Content Include="Views\Shared\ProposeBook.cshtml" />
     <Content Include="Views\ErrorPage\ErrorMessage.cshtml" />
+    <Content Include="Views\FindBook\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -30,8 +30,10 @@ namespace ReadMe.Controllers
 
         }
 
+
         [HttpPost]
-        public ActionResult RenderForm(string userMood, string bookType1, string bookType2)
+        //public ActionResult RenderForm(string userMood, string bookType1, string bookType2)
+        public ActionResult RenderForm(string userMood, string[] bookTypes)
         {
             Network net = new Network();
 
@@ -42,8 +44,12 @@ namespace ReadMe.Controllers
             int i = 0;
 
             net.SetEvidence("nastroj", userMood);
-            net.SetEvidence(bookType1, "tak");
-            net.SetEvidence(bookType2, "tak");
+            for (int j = 0; j < bookTypes.Length; j++)
+            {
+                net.SetEvidence(bookTypes[j], "tak");
+            }
+            //net.SetEvidence(bookType1, "tak");
+            //net.SetEvidence(bookType2, "tak");
 
             net.UpdateBeliefs();
 
@@ -69,8 +75,8 @@ namespace ReadMe.Controllers
             string chosenBookCategory = net[position + 7];
 
             ViewBag.UserMood = userMood;
-            ViewBag.BookType1 = bookType1;
-            ViewBag.BookType2 = bookType2;
+            //ViewBag.BookType1 = bookType1;
+            //ViewBag.BookType2 = bookType2;
             ViewBag.MaxNumber = maxNumber;
             ViewBag.Position = position;
             ViewBag.ChosenBookCategory = chosenBookCategory;
