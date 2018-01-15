@@ -11262,7 +11262,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "First",
+				"sFirst": "Pierwsza",
 	
 	
 				/**
@@ -11285,7 +11285,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Last",
+				"sLast": "Ostatnia",
 	
 	
 				/**
@@ -11308,7 +11308,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "Następna",
 	
 	
 				/**
@@ -11331,7 +11331,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "Poprzednia"
 			},
 	
 			/**
@@ -11354,7 +11354,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "Brak danych w tabeli",
 	
 	
 			/**
@@ -11386,7 +11386,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Pokazuje _START_ do _END_ z _TOTAL_ wierszy",
 	
 	
 			/**
@@ -11407,7 +11407,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Pokazuje 0 do 0 z 0 wierszy",
 	
 	
 			/**
@@ -11429,7 +11429,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(Filtruje z _MAX_ wierszy)",
 	
 	
 			/**
@@ -11547,7 +11547,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "Pokaż _MENU_ wierszy",
 	
 	
 			/**
@@ -11571,7 +11571,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLoadingRecords": "Loading...",
+			"sLoadingRecords": "Ładuje...",
 	
 	
 			/**
@@ -11592,7 +11592,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sProcessing": "Processing...",
+			"sProcessing": "Przetwarza...",
 	
 	
 			/**
@@ -11627,7 +11627,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Szukaj:",
 	
 	
 			/**
@@ -11685,7 +11685,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "Nie znaleziono pasujących książek"
 		},
 	
 	

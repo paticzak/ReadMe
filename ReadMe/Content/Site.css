@@ -1,25 +1,30 @@
-﻿@import url(http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
+﻿@import url(https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
 
 @font-face {
     font-family: 'Lato';
     src: url("/fonts/Lato-Light.ttf");
 }
 
+html, body {
+    height:100%;
+}
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url("/Content/Images/readme_background.jpg");
-    background-size: 100%;
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Lato';
-    /*background-color: #E0FFFF;*/
+    background-attachment: fixed;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    /*color: white;*/
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -53,3 +58,54 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.home-page {
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.main-text {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0px 0px 10px rgba(0,0,0, 0.3);
+}
+
+.header-text {
+    font-size: 46px;
+    font-weight: bold;
+}
+
+.main-button {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.my-button {
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-decoration: none;
+    padding: 4px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    margin: 10px;
+    padding: 15px 26px;
+    font-weight: 900;
+}
+
+    .my-button:hover {
+        text-decoration: none;
+        background-color: beige;
+        color: brown;
+    }
+
+
+    footer {
+        color: black;
+    }
