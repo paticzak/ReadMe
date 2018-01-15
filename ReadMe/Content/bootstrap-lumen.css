@@ -1409,10 +1409,11 @@ html {
 }
 
 body {
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Lato", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #555555;
+    /*color: #555555;*/
+    color: white !important;
     background-color: #ffffff;
 }
 
@@ -1426,14 +1427,19 @@ textarea {
 }
 
 a {
-    color: #158cba;
+    /*color: #158cba;*/
+    color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
     a:hover,
     a:focus {
-        color: #158cba;
-        text-decoration: underline;
+        /*color: #158cba;*/
+        color: white;
+        /*text-decoration: underline;*/
+        text-decoration: none;
+        font-weight: bold;
     }
 
     a:focus {
@@ -5837,8 +5843,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     .pagination > .active > span:focus {
         z-index: 3;
         color: #ffffff;
-        background-color: #158cba;
-        border-color: #127ba3;
+        background-color: #CFA072;
+        border-color: #CFA072;
         cursor: default;
     }
 
@@ -8805,4 +8811,9 @@ td {
 
     .navbar-fixed-top.scrolled .nav-link {
         color: white;
+    }
+
+    .container h2, h4 {
+        color: white;
+        text-shadow: 0px 0px 10px rgba(0,0,0, 0.3);
     }

@@ -39,14 +39,16 @@
 @section scripts {
     <script>
         $(document).ready(function () {
-            $("#books .js-update-popularity").on("click", function () {
-                $.ajax({
-                    url: '/Books/IncreasePopularity/' + $(this).attr("data-book-id"),
-                    method: "POST"
+            var table = $("#books").DataTable();
+                $("#books .js-update-popularity").on("click", function () {
+                    $.ajax({
+                        url: '/Books/IncreasePopularity/' + $(this).attr("data-book-id"),
+                        method: "POST"
+                    });
+                    $(this).prop("disabled", true);
+                    $(this).css('background', 'green');
                 });
-                $(this).prop("disabled", true);
-                $(this).css('background', 'green');
-            });
         });
+        
     </script>
 }

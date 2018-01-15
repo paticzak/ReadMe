@@ -7,42 +7,44 @@
 
 <h2>@Model.Title</h2>
 
-@using (Html.BeginForm("Save", "Books"))
-{
-    <div class="form-group">
-        @Html.LabelFor(m => m.Book.Name)
-        @Html.TextBoxFor(m => m.Book.Name, new { @class = "form-control", @required = "required" } )
-        @Html.ValidationMessageFor(m => m.Book.Name)
-    </div>
-    
-    <div class="form-group">
+<div style="color: white; font-weight: bold; text-shadow: 0px 0px 10px rgba(0,0,0, 0.4);">
+    @using (Html.BeginForm("Save", "Books"))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Book.Name)
+            @Html.TextBoxFor(m => m.Book.Name, new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(m => m.Book.Name)
+        </div>
 
-        @Html.LabelFor(m => m.Book.Author)
-        @Html.TextBoxFor(m => m.Book.Author, new { @class = "form-control", @required = "required" })
-        @Html.ValidationMessageFor(m => m.Book.Author)
-    </div>
-    
-     <div class="form-group">
-        @Html.LabelFor(m => m.Book.Popularity)
-        @Html.TextBoxFor(m => m.Book.Popularity, new { @class = "form-control", @type = "number", @min = "1", @required = "required" })
-        @Html.ValidationMessageFor(m => m.Book.Popularity)
-    </div>
-    
-    <div class="form-group">
-        @Html.LabelFor(m => m.Book.GenreId)
-        @Html.DropDownListFor(m => m.Book.GenreId, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-control", @required = "required"})
-        @Html.ValidationMessageFor(m => m.Book.GenreId)
-    </div> 
-    
-    <div class="form-group">
-        @Html.LabelFor(m => m.Book.BookTypeId)
-        @Html.DropDownListFor(m => m.Book.BookTypeId, new SelectList(Model.BookTypes, "Id", "Name"), "", new { @class = "form-control", @required = "required"})
-        @Html.ValidationMessageFor(m => m.Book.BookTypeId)
-    </div> 
-    
-    @Html.HiddenFor(m => m.Book.Id)
-    @Html.AntiForgeryToken()
-    
-    <button type="submit" class="btn btn-primary">Zapisz</button>
-}
+        <div class="form-group">
 
+            @Html.LabelFor(m => m.Book.Author)
+            @Html.TextBoxFor(m => m.Book.Author, new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(m => m.Book.Author)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Book.Popularity)
+            @Html.TextBoxFor(m => m.Book.Popularity, new { @class = "form-control", @type = "number", @min = "1", @required = "required" })
+            @Html.ValidationMessageFor(m => m.Book.Popularity)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Book.GenreId)
+            @Html.DropDownListFor(m => m.Book.GenreId, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(m => m.Book.GenreId)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Book.BookTypeId)
+            @Html.DropDownListFor(m => m.Book.BookTypeId, new SelectList(Model.BookTypes, "Id", "Name"), "", new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(m => m.Book.BookTypeId)
+        </div>
+
+        @Html.HiddenFor(m => m.Book.Id)
+        @Html.AntiForgeryToken()
+
+        <button type="submit" class="btn btn-primary">Zapisz</button>
+    }
+
+</div>

@@ -5,9 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+   .new-book-btn {
+       margin-top: 30px;
+       margin-bottom: 20px;
+   }
+   
+</style>
+
+
 <h2>Lista wszystkich książek:</h2>
-<div>
-    @Html.ActionLink("Dodaj nową książkę", "New", "Books", null, new { @class = "btn btn-primary btn-large" })
+<div class="new-book-btn">
+    @Html.ActionLink("DODAJ NOWĄ KSIĄŻKĘ >>", "New", "Books", null, new { @class = "my-button" })
 </div>
 <br />
 

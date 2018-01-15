@@ -18,13 +18,13 @@ body {
     background-repeat: no-repeat;
     font-family: 'Lato';
     background-attachment: fixed;
+    color: white !important;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    /*color: white;*/
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -80,7 +80,7 @@ input[type="checkbox"].input-validation-error {
     font-weight: bold;
 }
 
-.main-button {
+.main-button{
     text-align: center;
     margin: 0 auto;
 }
@@ -90,7 +90,6 @@ input[type="checkbox"].input-validation-error {
     border-radius: 10px;
     margin: 0 auto;
     text-decoration: none;
-    padding: 4px;
     text-align: center;
     color: white;
     font-size: 16px;
@@ -107,5 +106,6 @@ input[type="checkbox"].input-validation-error {
 
 
     footer {
-        color: black;
+        color: beige;
+        position: fixed;
     }
