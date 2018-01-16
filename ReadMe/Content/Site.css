@@ -11,7 +11,7 @@ html, body {
 
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 0;
     background-image: url("/Content/Images/readme_background.jpg");
     background-position: center;
     background-size: cover;
@@ -22,10 +22,10 @@ body {
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
@@ -60,7 +60,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 .home-page {
-    width: 1000px;
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -96,6 +96,7 @@ input[type="checkbox"].input-validation-error {
     margin: 10px;
     padding: 15px 26px;
     font-weight: 900;
+    background-color: transparent;
 }
 
     .my-button:hover {
@@ -105,10 +106,19 @@ input[type="checkbox"].input-validation-error {
     }
 
 
-    footer {
+    /*footer {
         color: beige;
         position: fixed;
+    }*/
+      footer {
+        color: beige;
+        background-color: rgba(100,0,0,.5);
+        display: block;
+        height: 30px;
+        margin-top: 30px;
     }
+    .max-height { min-height: 100%; height: auto !important; margin: 0 auto -60px}
+    .footer-caption { line-height: 30px;}
 
     
 /********************************************************/
@@ -163,6 +173,9 @@ tr {
     tr:hover a {
         color: #111;
     }
+    tr:hover button {
+        color: #111;
+    }
 
     tr:hover td {
         background: rgba(255, 255, 255, 0.35); /*wiersz parzysty po hoverze*/
@@ -204,7 +217,7 @@ td {
 
 /* ------------ NAVBAR ----------- */
 .navbar-fixed-top.scrolled {
-    background-color: rgba(0,0,0,.8) !important;
+    background-color: #AD8C51 !important;
     transition: background-color 200ms linear;
 }
 
@@ -235,7 +248,7 @@ td {
             font-weight: bold;
         }
 
-    .button {
+    /*.button {
         border: 1px solid white;
         border-radius: 10px;
         margin: 10px 6px;
@@ -246,7 +259,25 @@ td {
         font-weight: bold;
         background-color: beige;
         color: brown;
+    }*/
+
+    .button {
+        border: 1px solid white;
+        border-radius: 10px;
+        margin: 10px 0px;
+        padding: 10px;
+        width: 100%    ;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: beige;
+        color: brown;
+        min-height: 66px;
     }
+    @media(max-width: 1199px){ .one-line-button { line-height: 280%; } }
+    .one-line-button__short { line-height: 280%; }
+
+    @media(max-width: 768px){ .special-care-button { line-height: 280%; } }
 
         .button:hover {
             opacity: 0.6;
@@ -284,6 +315,10 @@ td {
         font-weight: 900;
     }
 
+    .checkbox input[type="checkbox"] {
+        margin-left: 0;
+    }
+
 /*--------------------------*/
 
 .h4-on-my-page {
@@ -306,3 +341,17 @@ td {
             text-decoration: none;
         }
 /*-------------------------*/
+
+.delete-button {
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.delete-button:hover {
+    color: black;
+}
+
+.form-control {
+    opacity: 0.4;
+}

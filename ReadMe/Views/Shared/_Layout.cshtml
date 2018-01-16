@@ -11,13 +11,20 @@
 </head>
 <body>
     @Html.Partial("_NavBar")
-    <div class="container body-content">
+    <div class="container max-height body-content">
         @RenderBody()
         
-        <footer>
+        @*<footer>
             <p>&copy; @DateTime.Now.Year - ReadMe</p>
-        </footer>
+        </footer>*@
+        
+        
     </div>
+    <footer>
+        <div class="container">
+            <span class="footer-caption">@DateTime.Now.Year - ReadMe</span>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/lib")
     @RenderSection("scripts", required: false)

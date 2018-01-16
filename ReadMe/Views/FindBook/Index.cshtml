@@ -7,73 +7,70 @@
 }
 
 <div class="in-find-book">
-    
+
     <form action="/FindBook/RenderForm" method="post">
         <h4>Jak się teraz czujesz?</h4>
-        <div class="container">
-            <div class="row">
-                <div class="form-group button-group round toggle">
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input type="radio" value="dobry" id="r1" name="userMood">
-                        <label class="button" for="r1">Czuję się fantastycznie!</label>
-                    </div>
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input type="radio" value="dobry" id="r2" name="userMood">
-                        <label class="button" for="r2">Czuję się<br />dobrze!</label>
-                    </div>
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input type="radio" value="dobry" id="r3" name="userMood">
-                        <label class="button" for="r3">Mam dziś świetny humor!</label>
-                    </div>
-
-                    @*<div class="w-100 d-none d-md-block"></div>*@
-
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input type="radio" value="zly" id="r4" name="userMood">
-                        <label class="button" for="r4">Mogłoby być lepiej...</label>
-                    </div>
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input type="radio" value="zly" id="r5" name="userMood">
-                        <label class="button" for="r5">Jestem przygnębiony.</label>
-                    </div>
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input type="radio" value="zly" id="r6" name="userMood">
-                        <label class="button" for="r6">To nie jest mój dzień...</label>
-                    </div>
+        @*<div class="container">*@
+        <div class="row">
+            <div class="form-group button-group round toggle">
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input type="radio" value="dobry" id="r1" name="userMood">
+                    <label class="button one-line-button" for="r1">Czuję się fantastycznie!</label>
                 </div>
-            </div>
-        </div><br /><br />
-        <h4>Po jaką książkę chciałbyś sięgnąć?</h4>
-        <div class="container">
-            <div class="row">
-                <div class="button-group">
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input id="checkbox1" type="checkbox" value="pozytywna" name="bookTypes">
-                        <label class="button" for="checkbox1" style="line-height: 280%">Pozytywną</label>
-                    </div>
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input id="checkbox2" type="checkbox" value="luzna" name="bookTypes">
-                        <label class="button" for="checkbox2" style="line-height: 280%">Luźną</label>
-                    </div>
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input id="checkbox3" type="checkbox" value="wciagajaca" name="bookTypes">
-                        <label class="button" for="checkbox3" style="line-height: 280%">Wciągającą</label>
-                    </div>
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input id="checkbox4" type="checkbox" value="refleksyjna" name="bookTypes">
-                        <label class="button" for="checkbox4" style="line-height: 280%">Refleksyjną</label>
-                    </div>
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input id="checkbox5" type="checkbox" value="wyciskacz_lez" name="bookTypes">
-                        <label class="button" for="checkbox5" style="line-height: 280%">Wyciskacz łez</label>
-                    </div>
-                    <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                        <input id="checkbox6" type="checkbox" value="wywolujaca_dreszczyk_emocji" name="bookTypes">
-                        <label class="button" for="checkbox6">Wywołującą dreszczyk emocji</label>
-                    </div>
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input type="radio" value="dobry" id="r2" name="userMood">
+                    <label class="button one-line-button__short" for="r2">Czuję się dobrze!</label>
+                </div>
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input type="radio" value="dobry" id="r3" name="userMood">
+                    <label class="button one-line-button" for="r3">Mam dziś świetny humor!</label>
+                </div>
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input type="radio" value="zly" id="r4" name="userMood">
+                    <label class="button one-line-button__short" for="r4">Mogłoby być lepiej...</label>
+                </div>
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input type="radio" value="zly" id="r5" name="userMood">
+                    <label class="button one-line-button" for="r5">Jestem przygnębiony.</label>
+                </div>
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input type="radio" value="zly" id="r6" name="userMood">
+                    <label class="button one-line-button" for="r6">To nie jest mój dzień...</label>
                 </div>
             </div>
         </div>
+        @*</div>*@<br /><br />
+        <h4>Po jaką książkę chciałbyś sięgnąć?</h4>
+        @*<div class="container">*@
+        <div class="row">
+            <div class="button-group">
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input id="checkbox1" type="checkbox" value="pozytywna" name="bookTypes">
+                    <label class="button one-line-button__short" for="checkbox1">Pozytywną</label>
+                </div>
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input id="checkbox2" type="checkbox" value="luzna" name="bookTypes">
+                    <label class="button one-line-button__short" for="checkbox2">Luźną</label>
+                </div>
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input id="checkbox3" type="checkbox" value="wciagajaca" name="bookTypes">
+                    <label class="button one-line-button__short" for="checkbox3">Wciągającą</label>
+                </div>
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input id="checkbox4" type="checkbox" value="refleksyjna" name="bookTypes">
+                    <label class="button one-line-button__short" for="checkbox4">Refleksyjną</label>
+                </div>
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input id="checkbox5" type="checkbox" value="wyciskacz_lez" name="bookTypes">
+                    <label class="button one-line-button__short" for="checkbox5">Wyciskacz łez</label>
+                </div>
+                <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
+                    <input id="checkbox6" type="checkbox" value="wywolujaca_dreszczyk_emocji" name="bookTypes">
+                    <label class="button special-care-button" for="checkbox6">Wywołującą dreszczyk emocji</label>
+                </div>
+            </div>
+        </div>
+        @*</div>*@
         <br /><br />
         <div class="main-button">
             <input class="my-button" type="submit" id="btn" value="WYSZUKAJ KSIĄŻKĘ >>" />
@@ -82,6 +79,7 @@
     </form>
 
 </div>
+
 
 
 
