@@ -12,9 +12,9 @@
         <h4>Jak się teraz czujesz?</h4>
         @*<div class="container">*@
         <div class="row">
-            <div class="form-group button-group round toggle">
+            <div class="form-group button-group round toggle user-mood-choice">
                 <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
-                    <input type="radio" value="dobry" id="r1" name="userMood">
+                    <input type="radio" value="dobry" id="r1" name="userMood" >
                     <label class="button one-line-button" for="r1">Czuję się fantastycznie!</label>
                 </div>
                 <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
@@ -43,7 +43,7 @@
         <h4>Po jaką książkę chciałbyś sięgnąć?</h4>
         @*<div class="container">*@
         <div class="row">
-            <div class="button-group">
+            <div class="button-group" >
                 <div class="col-lg-2 col-lg-offset-0 col-md-3 col-md-offset-2 col-sm-4 col-xs-12 button-center">
                     <input id="checkbox1" type="checkbox" value="pozytywna" name="bookTypes">
                     <label class="button one-line-button__short" for="checkbox1">Pozytywną</label>
@@ -73,15 +73,24 @@
         @*</div>*@
         <br /><br />
         <div class="main-button">
-            <input class="my-button" type="submit" id="btn" value="WYSZUKAJ KSIĄŻKĘ >>" />
+            <input class="submit-user-choice my-button"  type="submit" id="btn" value="WYSZUKAJ KSIĄŻKĘ >>" />
         </div>
 
     </form>
 
 </div>
 
+@section scripts {
+    <script>
 
-
+        $('.submit-user-choice').click(function () {
+            if (!$("input[name='userMood']:checked").val()) {
+                bootbox.alert('Odpowiedź na pierwsze pytanie jest konieczna, abyśmy mogli proponować Ci jak najlepiej dopasowane książki :) ');
+                return false;
+            }
+        })
+    </script>
+}
 
 
 @*<h3>P(Nastroj = @ViewBag.UserMood | JakaKsiazka1 = @ViewBag.BookType1 && JakaKsiazka2 = @ViewBag.BookType2) = @ViewBag.MaxNumber</h3>*@

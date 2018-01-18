@@ -6,9 +6,10 @@ using System.Web.Mvc;
 
 namespace ReadMe.Controllers
 {
-    [AllowAnonymous]
+    
     public class HomeController : Controller
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
             if(User.Identity.IsAuthenticated)
@@ -18,11 +19,13 @@ namespace ReadMe.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult ProposeBook()
         {
             return View("ProposeBook");
         }
 
+        [AllowAnonymous]
         public ActionResult Contact()
         {
            return View();

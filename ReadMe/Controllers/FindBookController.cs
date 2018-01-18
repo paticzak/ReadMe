@@ -16,23 +16,9 @@ namespace ReadMe.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult ArrayHandler(string[] function_param)
-        {
-
-            if (function_param.Length > 0)
-            {
-                //some code                
-                return Content("Success");
-            }
-
-            return Content("Not working");
-
-        }
 
 
         [HttpPost]
-        //public ActionResult RenderForm(string userMood, string bookType1, string bookType2)
         public ActionResult RenderForm(string userMood, string[] bookTypes)
         {
             Network net = new Network();
@@ -43,11 +29,22 @@ namespace ReadMe.Controllers
             double[] FindBiggestValue = new double[10];
             int i = 0;
 
-            net.SetEvidence("nastroj", userMood);
-            for (int j = 0; j < bookTypes.Length; j++)
+            //net.SetEvidence("nastroj", userMood);
+            if (bookTypes == null)
             {
-                net.SetEvidence(bookTypes[j], "tak");
+                net.SetEvidence("nastroj", userMood);
+    
             }
+            if (bookTypes != null)
+            {
+                net.SetEvidence("nastroj", userMood);
+                for (int j = 0; j < bookTypes.Length; j++)
+                {
+                    net.SetEvidence(bookTypes[j], "tak");
+                }
+            }
+            
+           
             //net.SetEvidence(bookType1, "tak");
             //net.SetEvidence(bookType2, "tak");
 
